@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeadPredictor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header" aria-labelledby="app-title">
+        <div class="brand" aria-label="LeadPredictor brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <h1 id="app-title">LeadPredictor</h1>
+        </div>
+        <p class="app-subtitle">Campaign analysis and conversion insights</p>
+      </header>
+
+      <div class="dashboard-layout">
+        <aside class="settings-panel" aria-label="Campaign settings panel">
+          <div class="field-group">
+            <label for="language">Language</label>
+            <select id="language" name="language">
+              <option value="en" selected>English</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="currency">Currency</label>
+            <select id="currency" name="currency">
+              <option value="usd" selected>US Dollar</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="campaign-start">Campaign Start</label>
+            <input id="campaign-start" name="campaign-start" type="date" value="2026-05-08" />
+          </div>
+
+          <div class="field-group">
+            <label for="campaign-end">Campaign End</label>
+            <input id="campaign-end" name="campaign-end" type="date" value="2026-11-04" />
+          </div>
+
+          <div class="field-group">
+            <label for="total-revenue">Total Revenue</label>
+            <input id="total-revenue" name="total-revenue" type="number" value="10000" min="0" step="100" />
+          </div>
+
+          <div class="field-group">
+            <label for="average-order-value">Avg. Order Value</label>
+            <input id="average-order-value" name="average-order-value" type="number" value="1000" min="0" step="10" />
+          </div>
+        </aside>
+
+        <main class="main-panel" aria-label="Lead predictor chart panel">
+          <section class="chart-section" aria-labelledby="chart-title">
+            <h2 id="chart-title">Monthly Performance</h2>
+            <div class="chart-container" aria-label="Performance chart area">
+              <div class="chart-scale" aria-hidden="true">
+                <span>0</span>
+                <span>20</span>
+                <span>40</span>
+                <span>60</span>
+                <span>80</span>
+                <span>100</span>
+                <span>120</span>
+              </div>
+
+              <div class="chart-bars" aria-label="Monthly bars">
+                <div class="chart-bar chart-bar--month-1" aria-label="Month 1">
+                  <span class="bar-label">Month #1</span>
+                </div>
+                <div class="chart-bar chart-bar--month-2" aria-label="Month 2">
+                  <span class="bar-label">Month #2</span>
+                </div>
+                <div class="chart-bar chart-bar--month-3" aria-label="Month 3">
+                  <span class="bar-label">Month #3</span>
+                </div>
+                <div class="chart-bar chart-bar--month-4" aria-label="Month 4">
+                  <span class="bar-label">Month #4</span>
+                </div>
+                <div class="chart-bar chart-bar--month-5" aria-label="Month 5">
+                  <span class="bar-label">Month #5</span>
+                </div>
+                <div class="chart-bar chart-bar--month-6" aria-label="Month 6">
+                  <span class="bar-label">Month #6</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <aside class="results-panel" aria-label="Summary results panel">
+          <article class="result-card" aria-labelledby="prospects-title">
+            <div class="result-header">
+              <span class="icon" aria-hidden="true"></span>
+              <h3 id="prospects-title">Prospects</h3>
+              <span class="result-percent">100%</span>
+            </div>
+            <div id="prospects-result" class="result-value" aria-live="polite">125</div>
+            <div class="progress-wrapper" aria-label="Prospects progress">
+              <span class="progress-bar progress-bar--prospects"></span>
+            </div>
+          </article>
+
+          <article class="result-card" aria-labelledby="leads-title">
+            <div class="result-header">
+              <span class="icon" aria-hidden="true"></span>
+              <h3 id="leads-title">Leads</h3>
+              <span class="result-percent">20%</span>
+            </div>
+            <div id="leads-result" class="result-value" aria-live="polite">25</div>
+            <div class="progress-wrapper" aria-label="Leads progress">
+              <span class="progress-bar progress-bar--leads"></span>
+            </div>
+          </article>
+
+          <article class="result-card" aria-labelledby="customers-title">
+            <div class="result-header">
+              <span class="icon" aria-hidden="true"></span>
+              <h3 id="customers-title">Customers</h3>
+              <span class="result-percent">8%</span>
+            </div>
+            <div id="customers-result" class="result-value" aria-live="polite">10</div>
+            <div class="progress-wrapper" aria-label="Customers progress">
+              <span class="progress-bar progress-bar--customers"></span>
+            </div>
+          </article>
+        </aside>
+      </div>
+
+      <section class="controls-panel" aria-label="Response rate controls">
+        <div class="slider-group">
+          <div class="slider-label-row">
+            <label for="lead-response-rate">Lead Response Rate</label>
+            <output id="lead-response-value" for="lead-response-rate">40.00%</output>
+          </div>
+          <input id="lead-response-rate" name="lead-response-rate" type="range" min="0" max="100" value="40" />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label-row">
+            <label for="prospect-response-rate">Prospect Response Rate</label>
+            <output id="prospect-response-value" for="prospect-response-rate">20.00%</output>
+          </div>
+          <input id="prospect-response-rate" name="prospect-response-rate" type="range" min="0" max="100" value="20" />
+        </div>
+
+        <div class="controls-actions">
+          <button id="calculate-button" type="button">Calculate</button>
+        </div>
+
+        <div id="error-message" class="error-message" role="alert" aria-live="assertive"></div>
+      </section>
+    </div>
+  </body>
+</html>
