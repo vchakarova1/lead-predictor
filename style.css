@@ -191,6 +191,24 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 1px solid rgba(196, 209, 220, 0.08);
 }
 
+.forecast-helper {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  z-index: 4;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 32px);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  opacity: 0.82;
+  text-align: center;
+}
+
+.forecast-helper[hidden] {
+  display: none;
+}
+
 .chart-scale {
   position: absolute;
   left: 10px;
@@ -243,6 +261,29 @@ input[type="number"]::-webkit-inner-spin-button {
   overflow: hidden;
 }
 
+.chart-bar.is-zero {
+  min-height: 0;
+  height: 0 !important;
+  background: transparent;
+  border-color: transparent;
+}
+
+.chart-bar-stack {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.chart-segment {
+  display: block;
+  width: 100%;
+}
+
+.chart-segment--prospects { background: rgba(223, 232, 239, 0.7); }
+.chart-segment--leads { background: rgba(223, 232, 239, 0.45); }
+.chart-segment--customers { background: rgba(223, 232, 239, 0.28); }
+
 .chart-bar--month-1 { height: 28%; }
 .chart-bar--month-2 { height: 36%; }
 .chart-bar--month-3 { height: 46%; }
@@ -258,6 +299,28 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 6px 8px;
   border-radius: 6px;
 }
+
+.chart-tooltip {
+  position: absolute;
+  left: 38%;
+  top: 18%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+  background: rgba(22, 42, 56, 0.9);
+  border: 1px solid rgba(223, 232, 239, 0.2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.chart-tooltip strong { font-size: 0.8rem; }
 
 .results-panel {
   display: flex;
