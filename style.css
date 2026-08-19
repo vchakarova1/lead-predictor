@@ -209,9 +209,10 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: flex-end;
   justify-content: space-between;
   gap: 12px;
-  height: 100%;
-  min-height: 260px;
+  height: 280px;
+  min-height: 280px;
   padding-left: 44px;
+  padding-bottom: 30px;
   position: relative;
 }
 
@@ -232,31 +233,79 @@ input[type="number"]::-webkit-inner-spin-button {
   position: relative;
   z-index: 1;
   width: 100%;
-  min-height: 110px;
-  background: linear-gradient(180deg, rgba(223, 232, 239, 0.5), rgba(223, 232, 239, 0.28));
-  border-radius: 6px 6px 0 0;
-  border: 1px solid rgba(223, 232, 239, 0.18);
+  min-height: 80px;
+  display: block;
+  overflow: visible;
+}
+
+.chart-bar-stack {
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 10px;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  justify-content: flex-end;
+  background: rgba(223, 232, 239, 0.22);
+  border: 1px solid rgba(223, 232, 239, 0.22);
+  border-radius: 6px 6px 0 0;
   overflow: hidden;
 }
 
-.chart-bar--month-1 { height: 28%; }
-.chart-bar--month-2 { height: 36%; }
-.chart-bar--month-3 { height: 46%; }
-.chart-bar--month-4 { height: 58%; }
-.chart-bar--month-5 { height: 70%; }
-.chart-bar--month-6 { height: 80%; }
+.chart-segment {
+  display: block;
+  width: 100%;
+}
+
+.chart-segment--prospects {
+  background: rgba(223, 232, 239, 0.7);
+}
+
+.chart-segment--leads {
+  background: rgba(223, 232, 239, 0.45);
+}
+
+.chart-segment--customers {
+  background: rgba(223, 232, 239, 0.28);
+}
 
 .bar-label {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2;
   font-size: 0.72rem;
   color: var(--text-secondary);
   background: rgba(7, 28, 45, 0.8);
   border: 1px solid rgba(223, 232, 239, 0.18);
   padding: 6px 8px;
   border-radius: 6px;
+}
+
+.chart-tooltip {
+  position: absolute;
+  left: 38%;
+  top: 18%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(22, 42, 56, 0.9);
+  border: 1px solid rgba(223, 232, 239, 0.2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.chart-tooltip strong {
+  font-size: 0.8rem;
+  color: var(--text-primary);
 }
 
 .results-panel {
