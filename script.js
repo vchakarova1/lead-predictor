@@ -196,7 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function resetForecast() {
-    Object.entries(DEFAULT_VALUES).forEach(([key, value]) => {
+    ['totalRevenue', 'averageOrderValue', 'leadResponseRate', 'prospectResponseRate'].forEach((key) => {
+      const value = DEFAULT_VALUES[key];
       inputs[key].value = value;
     });
     updateSliderLabels();
@@ -217,9 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
   [inputs.totalRevenue, inputs.averageOrderValue, inputs.leadResponseRate, inputs.prospectResponseRate].forEach((input) => {
     input.addEventListener('input', handleLiveChange);
   });
-  [inputs.language, inputs.currency, inputs.campaignStart, inputs.campaignEnd].forEach((input) => {
+  [inputs.language, inputs.currency].forEach((input) => {
     input.addEventListener('change', handleLiveChange);
   });
   calculateButton.addEventListener('click', resetForecast);
   updateSliderLabels();
+  showHelper('Demo values — adjust the inputs to calculate your forecast.');
+  updateDashboard(calculateForecast(getInputValues()));
 });
