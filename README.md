@@ -109,4 +109,3 @@ The **Start new forecast** button:
 - Keeps the currently selected campaign start and end dates unchanged.
 
 After any numeric input or slider is changed, the helper message is hidden and the forecast is recalculated live using the current numeric values.
-> Temporary note: This line will be removed after review.
