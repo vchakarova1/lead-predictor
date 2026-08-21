@@ -498,3 +498,181 @@ button:active {
     align-items: flex-start;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 12px 10px;
+  }
+
+  .app-shell {
+    padding: 12px 0;
+  }
+
+  .app-header {
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 4px 2px 12px;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .app-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .dashboard-layout {
+    gap: 14px;
+  }
+
+  .settings-panel,
+  .main-panel,
+  .results-panel,
+  .controls-panel {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+  }
+
+  .settings-panel,
+  .results-panel {
+    gap: 14px;
+  }
+
+  input,
+  select,
+  input[type="range"],
+  button {
+    max-width: 100%;
+  }
+
+  .main-panel {
+    min-height: 0;
+  }
+
+  .chart-section {
+    gap: 12px;
+  }
+
+  .chart-container {
+    min-height: 320px;
+    padding: 24px 8px 8px;
+    overflow: hidden;
+  }
+
+  .forecast-helper {
+    top: 8px;
+    max-width: calc(100% - 20px);
+    font-size: 0.66rem;
+  }
+
+  .chart-scale {
+    left: 6px;
+    font-size: 0.62rem;
+  }
+
+  .chart-bars {
+    gap: 6px;
+    height: 270px;
+    min-height: 270px;
+    padding-left: 30px;
+    padding-bottom: 38px;
+  }
+
+  .chart-bars::before {
+    left: 30px;
+  }
+
+  .chart-bar {
+    min-width: 0;
+  }
+
+  .bar-label {
+    max-width: calc(100% + 12px);
+    overflow: hidden;
+    padding: 5px 4px;
+    font-size: 0.6rem;
+    text-overflow: clip;
+  }
+
+  .chart-tooltip {
+    left: 50%;
+    top: 20%;
+    max-width: calc(100% - 44px);
+    padding: 7px 8px;
+    font-size: 0.64rem;
+    overflow-wrap: anywhere;
+  }
+
+  .chart-tooltip strong {
+    font-size: 0.7rem;
+  }
+
+  .result-card {
+    min-height: 120px;
+    padding: 14px;
+  }
+
+  .result-card h3 {
+    font-size: 1rem;
+  }
+
+  .result-value {
+    font-size: 2.2rem;
+  }
+
+  .controls-panel {
+    gap: 18px;
+    margin-top: 14px;
+    padding: 16px 14px;
+  }
+
+  .slider-label-row {
+    align-items: flex-start;
+  }
+
+  .slider-label-row label,
+  output {
+    font-size: 0.95rem;
+  }
+
+  .controls-actions {
+    margin-top: 2px;
+  }
+
+  button {
+    width: 100%;
+    min-height: 46px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 8px;
+  }
+
+  .chart-container {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .chart-bars {
+    gap: 3px;
+    padding-left: 26px;
+  }
+
+  .chart-bars::before {
+    left: 26px;
+  }
+
+  .chart-scale {
+    left: 3px;
+  }
+
+  .bar-label {
+    font-size: 0.54rem;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
